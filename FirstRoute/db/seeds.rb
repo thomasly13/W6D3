@@ -11,6 +11,10 @@ Artwork.destroy_all
 User.destroy_all
 Comment.destroy_all
 
+["users", "artworks", "artwork_shares", "comments"].each do |table_name|
+    ApplicationRecord.connection.reset_pk_sequence!(table_name)
+  end
+
 user1 = User.create!(username: "Thomas")
 user2 = User.create!(username: "Anthony")
 user3 = User.create!(username: "Vince")
