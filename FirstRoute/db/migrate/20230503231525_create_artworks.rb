@@ -4,7 +4,6 @@ class CreateArtworks < ActiveRecord::Migration[7.0]
       t.string :title, null: false
       t.text :image_url, null: false, unique: true
       t.references :artist, null:false, foreign_key:{to_table: :users}
-c
       t.timestamps
     end
   end
